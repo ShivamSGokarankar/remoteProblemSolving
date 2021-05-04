@@ -13,5 +13,7 @@ local.properties
 .factorypath
 .class
 *.txt
-src/practise/
 *.bin
+/.idea
+/out
+
