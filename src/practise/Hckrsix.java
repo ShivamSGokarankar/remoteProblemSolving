@@ -5,8 +5,8 @@ import java.util.Locale;
 public class Hckrsix {
     public static void main(String[] args) {
 
-        String a = "hello";
-        String b = "java";
+        String a = "aello";
+        String b = "bava";
 
         int sum = a.length() + b.length();
         System.out.println(sum);
