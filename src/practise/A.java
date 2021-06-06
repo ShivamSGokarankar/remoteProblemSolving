@@ -3,40 +3,68 @@ package practise;
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.atomic.AtomicLongArray;
 
-class Display
-{
+class Display {
 
-    synchronized public void wish(String name )
+    public synchronized void displayn()
     {
-        for (int i = 0; i < 4; i++) {
-            System.out.print("\"Good morning\" ");
-            try {
-                Thread.sleep(2000);
+        for (int i = 1; i < 10; i++) {
+
+            System.out.print(i);
+            try
+            {
+                Thread.sleep(600);
             }
-            catch(Exception e)
+            catch (InterruptedException e)
             {
 
             }
-            System.out.println(  name );
         }
+    }
+
+    public synchronized void displayc()
+    {
+        for (int i = 65; i < 74; i++) {
+
+            System.out.print((char)i);
+            try
+            {
+                Thread.sleep(600);
+            }
+            catch (InterruptedException e)
+            {
+
+            }
+        }
+    }
+
+}
+
+class myThread1 extends Thread
+{
+    Display d ;
+    myThread1(Display d )
+    {
+        this.d=d;
+
+    }
+
+    @Override
+    public void run() {
+         d.displayn();
     }
 }
 
-class myThread extends  Thread
+class myThread2 extends Thread
 {
-
     Display d ;
-    String name ;
-
-    public myThread( Display d ,String name )
+    myThread2(Display d )
     {
-        this.name=name;
-         this.d = d; //dont create new object here 
-
+        this.d=d;
     }
-    public void run()
-    {
-        d.wish(name);
+
+    @Override
+    public void run() {
+        d.displayn();
     }
 }
 
@@ -44,14 +72,10 @@ public class A {
     public static void main(String[] args) throws InterruptedException
     {
         Display d= new Display();
-        myThread m1 = new myThread(d,"shivam");
-        myThread m2 = new myThread(d,"shi");
-        myThread m3 = new myThread(d,"fddfm");
-        myThread m4 = new myThread(d,"shgfhfghhfam");
+        myThread1 m1= new myThread1(d);
+        myThread2 m2 = new myThread2(d);
         m1.start();
         m2.start();
-        m3.start();
-        m4.start();
     }
 }
 
