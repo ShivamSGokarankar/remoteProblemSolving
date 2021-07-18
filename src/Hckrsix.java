@@ -1,6 +1,4 @@
-package practise;
 
-import java.util.Locale;
 
 public class Hckrsix {
     public static void main(String[] args) {

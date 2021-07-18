@@ -1,5 +1,3 @@
-package practise;
-
 import java.util.Scanner;
 
 public class Hckrone {

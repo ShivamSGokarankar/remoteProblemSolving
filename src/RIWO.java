@@ -1,7 +1,3 @@
-package practise;
-
-import java.nio.channels.Channels;
-
 public class RIWO {
 
     {

@@ -1,5 +1,3 @@
-package practise;
-
 public class Hckrseven {
 
     public static String getSmallestAndLargest(String s, int k) {
